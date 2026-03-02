@@ -1,11 +1,12 @@
 package com.simpleshopping.data
 
+import android.content.ContentValues
 import android.content.Context
+import android.database.sqlite.SQLiteDatabase
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
-import kotlinx.coroutines.runBlocking
 
 @Database(
     entities = [Section::class, Item::class, ItemHistory::class, TripSnapshot::class],
@@ -101,37 +102,29 @@ abstract class ShoppingDatabase : RoomDatabase() {
         private class PrepopulateCallback : Callback() {
             override fun onCreate(db: SupportSQLiteDatabase) {
                 super.onCreate(db)
-                INSTANCE?.let { database ->
-                    // runBlocking is safe here: Room's onCreate runs on a background thread,
-                    // and we must finish prepopulation before any query can execute.
-                    runBlocking {
-                        val sectionDao = database.sectionDao()
-                        val historyDao = database.itemHistoryDao()
-                        val sectionIds = mutableMapOf<String, Long>()
+                // Use raw SQL via the db parameter — Room DAOs aren't available yet
+                // because INSTANCE is set after build() returns.
+                val sectionIds = mutableMapOf<String, Long>()
 
-                        DEFAULT_SECTIONS.forEachIndexed { index, name ->
-                            val id = sectionDao.insert(
-                                Section(
-                                    name = name,
-                                    sortOrder = index,
-                                    isDefault = true
-                                )
-                            )
-                            sectionIds[name] = id
-                        }
+                DEFAULT_SECTIONS.forEachIndexed { index, name ->
+                    val values = ContentValues().apply {
+                        put("name", name)
+                        put("sort_order", index)
+                        put("is_default", 1)
+                    }
+                    val id = db.insert("sections", SQLiteDatabase.CONFLICT_REPLACE, values)
+                    sectionIds[name] = id
+                }
 
-                        COMMON_FOODS.forEach { (sectionName, foods) ->
-                            val sectionId = sectionIds[sectionName] ?: return@forEach
-                            foods.forEach { foodName ->
-                                historyDao.insert(
-                                    ItemHistory(
-                                        name = foodName,
-                                        sectionId = sectionId,
-                                        usageCount = 1
-                                    )
-                                )
-                            }
+                COMMON_FOODS.forEach { (sectionName, foods) ->
+                    val sectionId = sectionIds[sectionName] ?: return@forEach
+                    foods.forEach { foodName ->
+                        val values = ContentValues().apply {
+                            put("name", foodName)
+                            put("section_id", sectionId)
+                            put("usage_count", 1)
                         }
+                        db.insert("item_history", SQLiteDatabase.CONFLICT_IGNORE, values)
                     }
                 }
             }

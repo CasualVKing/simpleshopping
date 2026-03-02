@@ -297,11 +297,13 @@ class MainActivity : AppCompatActivity() {
             AppMode.CREATE -> {
                 binding.toolbar.title = getString(R.string.mode_create)
                 toggleItem?.title = getString(R.string.switch_to_shopping)
+                toggleItem?.setIcon(android.R.drawable.ic_menu_agenda)
                 binding.fabStartShopping.show()
             }
             AppMode.SHOPPING -> {
                 binding.toolbar.title = getString(R.string.mode_shopping)
                 toggleItem?.title = getString(R.string.switch_to_create)
+                toggleItem?.setIcon(android.R.drawable.ic_menu_edit)
                 binding.fabStartShopping.hide()
             }
         }
