@@ -2,4 +2,17 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Notepad theme -->
+    <color name="notepad_yellow">#FFF9C4</color>
+    <color name="notepad_yellow_dark">#FFF59D</color>
+    <color name="notepad_blue_line">#AABCCCDC</color>
+    <color name="notepad_red_margin">#AACC6666</color>
+    <color name="notepad_ink">#FF1A237E</color>
+    <color name="notepad_header_ink">#FF0D47A1</color>
+    <color name="notepad_toolbar_bg">#FFF9A825</color>
+    <color name="notepad_shopping_toolbar_bg">#FF558B2F</color>
+    <color name="notepad_toolbar_text">#FF3E2723</color>
+    <color name="notepad_fab_bg">#FFF57F17</color>
+    <color name="notepad_fab_icon">#FFFFFFFF</color>
 </resources>

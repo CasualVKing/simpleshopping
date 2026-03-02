@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:minHeight="48dp"
+    android:paddingStart="48dp"
+    android:paddingEnd="8dp">
+
+    <AutoCompleteTextView
+        android:id="@+id/inlineItemName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="@string/inline_item_hint"
+        android:inputType="textCapSentences"
+        android:imeOptions="actionDone"
+        android:maxLines="1"
+        android:completionThreshold="2"
+        android:background="@android:color/transparent"
+        android:textSize="18sp"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        android:textColor="?attr/notepadTextColor"
+        android:textColorHint="?attr/notepadTextColor"
+        android:fontFamily="?attr/notepadFontFamily" />
+
+</LinearLayout>

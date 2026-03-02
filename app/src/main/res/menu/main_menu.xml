@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_toggle_mode"
+        android:title="@string/switch_to_shopping"
+        android:icon="@android:drawable/ic_menu_agenda"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_add_section"
+        android:title="@string/add_section"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_sort_mode"
+        android:title="@string/sort_by_store_route"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_new_trip"
+        android:title="@string/new_trip"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_copy_last_trip"
+        android:title="@string/copy_last_trip"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_i_got_it"
+        android:title="@string/i_got_it_toggle"
+        android:checkable="true"
+        app:showAsAction="never" />
+
+</menu>

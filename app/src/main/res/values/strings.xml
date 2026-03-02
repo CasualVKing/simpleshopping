@@ -1,4 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Simple Shopping</string>
+
+    <!-- Modes -->
+    <string name="mode_create">Shopping List</string>
+    <string name="mode_shopping">Shopping</string>
+    <string name="switch_to_shopping">Switch to Shopping</string>
+    <string name="switch_to_create">Switch to Create</string>
+
+    <!-- Actions -->
+    <string name="add_item">Add Item</string>
+    <string name="add_section">Add Section</string>
+    <string name="delete_item">Delete item</string>
+    <string name="edit_section">Edit section</string>
+    <string name="toggle_recurring">Toggle recurring</string>
+    <string name="new_trip">New Trip</string>
+    <string name="copy_last_trip">Repeat Last Trip</string>
+    <string name="sort_by_store_route">Sort by Store Route</string>
+    <string name="sort_manual">Sort Manually</string>
+
+    <!-- Dialogs -->
+    <string name="add_item_title">Add Item</string>
+    <string name="item_name_hint">Item name</string>
+    <string name="section_label">Section</string>
+    <string name="recurring_label">Buy every trip</string>
+    <string name="add">Add</string>
+    <string name="cancel">Cancel</string>
+    <string name="add_section_title">Add Section</string>
+    <string name="section_name_hint">Section name</string>
+    <string name="edit_section_title">Edit Section</string>
+    <string name="delete_section">Delete Section</string>
+    <string name="save">Save</string>
+
+    <!-- Confirmations -->
+    <string name="new_trip_confirm_title">Start New Trip?</string>
+    <string name="new_trip_confirm_message">This will clear all non-recurring items and uncheck everything. Your current list will be saved so you can repeat it later.</string>
+    <string name="start_trip">Start Trip</string>
+
+    <!-- Empty state -->
+    <string name="empty_list_create">Your list is empty.\nTap a section to add items.</string>
+    <string name="empty_list_shopping">Nothing to shop for.\nAdd items in Shopping List mode first.</string>
+
+    <!-- Done shopping -->
+    <string name="done_shopping">Done!</string>
+    <string-array name="done_shopping_messages">
+        <item>All done! 🎉</item>
+        <item>Done — you deserve a break!</item>
+        <item>Shopping complete! Nailed it!</item>
+        <item>That\'s a wrap! Great job!</item>
+        <item>Mission accomplished!</item>
+        <item>Cart: full. You: awesome.</item>
+        <item>Finished! Time to relax.</item>
+    </string-array>
+
+    <!-- No last trip -->
+    <string name="no_last_trip">No previous trip to repeat.</string>
+
+    <!-- Inline input -->
+    <string name="inline_item_hint">Add item…</string>
+
+    <!-- I got it -->
+    <string name="i_got_it_toggle">Move checked to \"I got it!\"</string>
+
+    <!-- Drag reorder -->
+    <string name="drop_here_to_delete">Drop here to delete</string>
+    <string name="cannot_delete_default_section">Default sections can\'t be deleted</string>
+    <string name="delete_section_confirm_title">Delete Section?</string>
+    <string name="delete_section_confirm_message">This will delete \"%1$s\" and all its items.</string>
 </resources>

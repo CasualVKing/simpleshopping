@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!-- Base theme -->
     <style name="Theme.SimpleShopping" parent="Theme.Material3.DayNight.NoActionBar">
     </style>
+
+    <!-- Notepad theme -->
+    <style name="Theme.SimpleShopping.Notepad" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Custom notepad attributes -->
+        <item name="notepadBackground">@color/notepad_yellow</item>
+        <item name="notepadLineColor">@color/notepad_blue_line</item>
+        <item name="notepadMarginColor">@color/notepad_red_margin</item>
+        <item name="notepadTextColor">@color/notepad_ink</item>
+        <item name="notepadHeaderTextColor">@color/notepad_header_ink</item>
+        <item name="notepadFontFamily">@font/patrick_hand</item>
+        <item name="notepadCheckedAlpha">0.4</item>
+
+        <!-- Material3 surface overrides for notepad feel -->
+        <item name="colorSurface">@color/notepad_yellow</item>
+        <item name="colorOnSurface">@color/notepad_ink</item>
+        <item name="colorSurfaceVariant">@color/notepad_yellow_dark</item>
+        <item name="colorPrimary">@color/notepad_toolbar_bg</item>
+        <item name="colorOnPrimary">@color/notepad_toolbar_text</item>
+        <item name="colorSecondaryContainer">@color/notepad_fab_bg</item>
+        <item name="colorOnSecondaryContainer">@color/notepad_fab_icon</item>
+
+        <!-- Toolbar / app bar -->
+        <item name="android:statusBarColor">@color/notepad_toolbar_bg</item>
+        <item name="android:windowBackground">@color/notepad_yellow</item>
+    </style>
+
 </resources>

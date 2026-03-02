@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="notepadBackground" format="reference|color" />
+    <attr name="notepadLineColor" format="color" />
+    <attr name="notepadMarginColor" format="color" />
+    <attr name="notepadTextColor" format="color" />
+    <attr name="notepadHeaderTextColor" format="color" />
+    <attr name="notepadFontFamily" format="reference" />
+    <attr name="notepadCheckedAlpha" format="float" />
+</resources>
